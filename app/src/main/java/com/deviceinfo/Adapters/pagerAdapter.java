@@ -10,9 +10,9 @@ import com.deviceinfo.Fragments.Battery_Fragment;
 import com.deviceinfo.Fragments.CPU_Fragment;
 import com.deviceinfo.Fragments.Device_Fragment;
 import com.deviceinfo.Fragments.Display_Fragment;
+import com.deviceinfo.Fragments.Memory_Fragment;
 import com.deviceinfo.Fragments.Sensors_Fragment;
 import com.deviceinfo.Fragments.System_Fragment;
-import com.deviceinfo.Fragments.Thermal_Fragment;
 
 public class pagerAdapter extends FragmentPagerAdapter {
     public pagerAdapter(@NonNull FragmentManager fm) {
@@ -36,14 +36,16 @@ public class pagerAdapter extends FragmentPagerAdapter {
             return new Battery_Fragment();
         } else if (position == 4) {
             return new Sensors_Fragment();
-        } else {
+        } else if (position == 5){
             return new Display_Fragment();
+        } else {
+            return new Memory_Fragment();
         }
     }
 
     @Override
     public int getCount() {
-        return 6;
+        return 7;
     }
 
     @Nullable
@@ -59,8 +61,10 @@ public class pagerAdapter extends FragmentPagerAdapter {
             return "Battery";
         } else if (position == 4) {
             return "Sensors";
-        } else {
+        } else if (position == 5) {
             return "Display";
+        }else {
+            return "Memory";
         }
     }
 }

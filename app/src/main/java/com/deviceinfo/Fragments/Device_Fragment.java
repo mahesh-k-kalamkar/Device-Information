@@ -65,33 +65,6 @@ public class Device_Fragment extends Fragment {
         phoneType = PhoneType();
         fingerprint = Build.FINGERPRINT;
 
-//        Context context = getContext();
-//        long totalRAM = DeviceInfoUtil.getTotalRAM(context);
-//        double totalRAMInGB = DeviceInfoUtil.convertBytesToGB(totalRAM);
-//        long availableRAM = DeviceInfoUtil.getAvailableRAM(context);
-//        double availableRAMInGB = DeviceInfoUtil.convertBytesToGB(availableRAM);
-//        long internalStorageSize = DeviceInfoUtil.getInternalStorageSize();
-//        double internalStorageSizeInGB = DeviceInfoUtil.convertBytesToGB(internalStorageSize);
-//        long availableInternalStorage = DeviceInfoUtil.getAvailableInternalStorageSize();
-//        double availableInternalStorageInGB = DeviceInfoUtil.convertBytesToGB(availableInternalStorage);
-
-
-//        DeviceInfoList.add("Device : " + Build.DEVICE);
-//        DeviceInfoList.add("Model : " + Build.MODEL);
-//        DeviceInfoList.add("Brand : " + Build.BRAND);
-//        DeviceInfoList.add("Manufacturer : " + Build.MANUFACTURER);
-//        DeviceInfoList.add("Product : " + Build.PRODUCT);
-//        DeviceInfoList.add("Board : " + Build.BOARD);
-//        DeviceInfoList.add("Device Code Name : " + Build.VERSION.CODENAME);
-//        DeviceInfoList.add("Screen Size : " + String.format("%.1f", Math.min(dpWidth, dpHeight)) + " inches");
-//        DeviceInfoList.add("Screen Resolution : " + screenWidthPixels + "x" + screenHeightPixels);
-//        DeviceInfoList.add("Screen Density : " + densityDpi + " dpi");
-//        DeviceInfoList.add("Dimensions : " + screenWidthPixels + "x" + (screenHeightPixels - statusBarHeight - actionBarHeight) + " pixels");
-//        DeviceInfoList.add("Total RAM : " + totalRAMInGB + " GB");
-//        DeviceInfoList.add("Available RAM : " + availableRAMInGB + " GB");
-//        DeviceInfoList.add("Internal Storage : " + internalStorageSizeInGB + " GB");
-//        DeviceInfoList.add("Available Storage : " + availableInternalStorageInGB + " GB");
-
         DeviceInfoList.add("Model : " + model);
         DeviceInfoList.add("Manufacturer : " + manufacturer);
         DeviceInfoList.add("Brand : " + brand);
