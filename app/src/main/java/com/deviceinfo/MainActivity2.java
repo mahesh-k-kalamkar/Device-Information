@@ -29,7 +29,7 @@ public class MainActivity2 extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-        setContentView(R.layout.activity_main); // this will bind your MainActivity.class file with activity_main.
+        setContentView(R.layout.activity_main2);
 
         new Handler().postDelayed(new Runnable() {
             @Override
