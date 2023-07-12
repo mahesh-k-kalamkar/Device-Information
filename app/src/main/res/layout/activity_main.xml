@@ -12,11 +12,11 @@
         android:id="@+id/featureTablayout"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="#787878"
+        android:background="#2C2F45"
         app:tabIndicatorColor="@color/black"
         app:tabMode="scrollable"
         app:tabRippleColor="@color/white"
-        app:tabSelectedTextColor="@color/black"
+        app:tabSelectedTextColor="#7F87BF"
         app:tabTextColor="@color/white" />
 
     <androidx.viewpager.widget.ViewPager

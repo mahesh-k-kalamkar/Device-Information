@@ -11,6 +11,8 @@ import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -29,7 +31,7 @@ public class Display_Fragment extends Fragment {
     String density, fontScale, size, refreshRate, hdr, hdrCapable, brightnessLevel, brightnessMode, timeout, orientation;
     StringBuilder str;
 
-    @SuppressLint("MissingInflatedId")
+    @SuppressLint({"MissingInflatedId", "DefaultLocale"})
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -63,16 +65,16 @@ public class Display_Fragment extends Fragment {
         DisplayList = view.findViewById(R.id.DisplayList);
 
 
-        DisplayInfoList.add(getContext().getResources().getString(R.string.resol)+ " : "+ w + " x " + h + " " + getContext().getResources().getString(R.string.pixel));
-        DisplayInfoList.add(getContext().getResources().getString(R.string.density)+ " : " + dpi + " dpi" + density);
-        DisplayInfoList.add(getContext().getResources().getString(R.string.fontscale)+ " : " + fontScale);
-        DisplayInfoList.add(getContext().getResources().getString(R.string.size)+ " : " + size);
-        DisplayInfoList.add(getContext().getResources().getString(R.string.ref_rate)+ " : " + refreshRate);
+        DisplayInfoList.add("Resolution "+ " : "+ w + " x " + h + " " + "Pixels");
+        DisplayInfoList.add("Density "+ " : " + dpi + " dpi" + density);
+        DisplayInfoList.add("Font Scale " + " : " + fontScale);
+        DisplayInfoList.add("Physical Size "+ " : " + size);
+        DisplayInfoList.add("Refresh Rate "+ " : " + refreshRate);
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
             Display.HdrCapabilities hdrCapabilities = ((Activity)getContext()).getWindowManager().getDefaultDisplay().getHdrCapabilities();
             if (hdrCapabilities.getSupportedHdrTypes().length == 0) {
-                hdr = getContext().getResources().getString(R.string.not_supported);
+                hdr = "Not Supported";
             } else {
                 int[] hdrtypes = hdrCapabilities.getSupportedHdrTypes();
                 for (int hdrtype : hdrtypes) {
@@ -97,12 +99,12 @@ public class Display_Fragment extends Fragment {
         }
         brightnessMode = getBrightnessMode();
         orientation = getOrientation();
-        DisplayInfoList.add(getContext().getResources().getString(R.string.hdr)+ " : "+ hdr);
-        DisplayInfoList.add(getContext().getResources().getString(R.string.hdr_cap)+ " : "+ hdrCapable);
-        DisplayInfoList.add(getContext().getResources().getString(R.string.brightness)+ " : "+ brightnessLevel);
-        DisplayInfoList.add(getContext().getResources().getString(R.string.bright_mode)+ " : "+ brightnessMode);
-        DisplayInfoList.add(getContext().getResources().getString(R.string.timeout)+ " : "+ timeout);
-        DisplayInfoList.add(getContext().getResources().getString(R.string.orientation)+ " : "+ orientation);
+        DisplayInfoList.add("HDR "+ " : "+ hdr);
+        DisplayInfoList.add("HDR Capabilities"+ " : "+ hdrCapable);
+        DisplayInfoList.add("Brightness Level"+ " : "+ brightnessLevel);
+        DisplayInfoList.add("Brightness Mode"+ " : "+ brightnessMode);
+        DisplayInfoList.add("Screen Timeout"+ " : "+ timeout);
+        DisplayInfoList.add("Orientation"+ " : "+ orientation);
 
         ArrayAdapter<String> adapter = new ArrayAdapter<>(getContext(), android.R.layout.simple_list_item_1, DisplayInfoList);
         DisplayList.setAdapter(adapter);
@@ -170,16 +172,16 @@ public class Display_Fragment extends Fragment {
         String orien = "";
         switch (getContext().getResources().getConfiguration().orientation) {
             case 0:
-                orien = getContext().getResources().getString(R.string.undefined);
+                orien = "Undefined";
                 break;
             case 1:
-                orien = getContext().getResources().getString(R.string.portrait);
+                orien = "Portrait";
                 break;
             case 2:
-                orien = getContext().getResources().getString(R.string.landscape);
+                orien = "Landscape";
                 break;
             case 3:
-                orien = getContext().getResources().getString(R.string.square);
+                orien = "Square";
                 break;
         }
         return orien;
